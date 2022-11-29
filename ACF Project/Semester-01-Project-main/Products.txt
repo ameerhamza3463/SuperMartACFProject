@@ -1,0 +1,7 @@
+6
+101 Apple 9 3
+102 Banana 0 4
+103 Corn 24 8
+104 Oil 31 7
+105 Fish 33 5
+106 Rice 30 9

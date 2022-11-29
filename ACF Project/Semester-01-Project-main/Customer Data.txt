@@ -1,0 +1,60 @@
+
+ID	1001	Superman
+101	Apple	1	Rs 3	Rs 3
+104	Oil  	2	Rs 14	Rs 28
+106	Rice	3	Rs 27	Rs 81
+TOTAL:					Rs 112.00
+..............................
+101	Apple	2	Rs 6	Rs 12
+103	Corn	2	Rs 16	Rs 32
+TOTAL:					Rs 44.00
+..............................
+101	Apple	1	Rs 3	Rs 3
+104	Oil  	2	Rs 14	Rs 28
+106	Rice	2	Rs 18	Rs 36
+TOTAL:					Rs 67.00
+..............................
+101	Apple	1	Rs 3	Rs 3
+104	Oil  	2	Rs 14	Rs 28
+105	Fish	2	Rs 10	Rs 20
+TOTAL:					Rs 51.00
+..............................
+101	Apple	1	Rs 3	Rs 3
+103	Corn	2	Rs 16	Rs 32
+104	Oil  	2	Rs 14	Rs 28
+TOTAL:					Rs 63.00
+..............................
+101	Apple	1	Rs 3	Rs 3
+106	Rice	5	Rs 45	Rs 225
+TOTAL:					Rs 228.00
+..............................
+101	Apple	2	Rs 6	Rs 12
+106	Rice	10	Rs 90	Rs 900
+TOTAL:					Rs 912.00
+..............................
+101	Apple	2	Rs 6	Rs 12
+104	Oil  	1	Rs 7	Rs 7
+105	Fish	5	Rs 25	Rs 125
+TOTAL:					Rs 144.00
+..............................
+101	Apple	10	Rs 30	Rs 300
+103	Corn	2	Rs 16	Rs 32
+TOTAL:					Rs 332.00
+..............................
+101	Apple	10	Rs 30	Rs 300
+102	Banana	20	Rs 80	Rs 1600
+104	Oil  	10	Rs 70	Rs 700
+TOTAL:					Rs 2600.00
+..............................
+TOTAL:					Rs 0.00
+..............................
+101	Apple	10	Rs 30	Rs 300
+102	Banana	10	Rs 40	Rs 400
+103	Corn	20	Rs 160	Rs 3200
+105	Fish	10	Rs 50	Rs 500
+TOTAL:					Rs 4400.00
+______________________________
+ID	0	Unknown
+102	Banana	20	Rs 80	Rs 1600
+TOTAL:					Rs 1600.00
+______________________________
