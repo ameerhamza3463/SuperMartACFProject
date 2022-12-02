@@ -1,11 +1,15 @@
 #include <stdio.h>
 // #include<iostream>
 // #include <unistd.h>
+#include <conio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 // using namespace std;
 // STRUCTURES
+#define COLOR_BOLD "\x1B[1m"
+#define COLOR_OFF "\x1B[0m"
+
 struct items
 {
     int code;
@@ -121,7 +125,7 @@ int greeting()
     }
     return choice;
 }
-void reportGenerationLoadingScreen()
+void LoadingScreen()
 {
     int counter = 0, i, j, k;
     for (i = 0; i < 101; i++)
@@ -150,13 +154,16 @@ void reportGenerationLoadingScreen()
             usleep(20000);
         }
     }
-
+}
+struct pro
+{
+    char name[20];
+    float profit;
+} * Profits;
+void reportGenerationLoadingScreen()
+{
+    int i = 0, j = 0;
     system("cls");
-    struct pro
-    {
-        char name[20];
-        float profit;
-    };
     printf("\x1B[1;%dm", 29);
     printf("\t\t\t\t\t<--- SALE REPORT --->\n\n");
     FILE *fileptr;
@@ -175,7 +182,7 @@ void reportGenerationLoadingScreen()
     struct items *ClosingStock;
     OpeningStock = (int *)calloc(productQuantity, sizeof(int));
     ClosingStock = (struct items *)calloc(productQuantity, sizeof(struct items));
-    struct pro *Profits;
+    // struct pro *Profits;
     Profits = (struct pro *)calloc(productQuantity, sizeof(struct pro));
 
     i = 0;
@@ -296,6 +303,38 @@ void reportGenerationLoadingScreen()
     printf("Press any key to go forward...\n");
     getchar();
 }
+
+float incomeStatement(int noOfEmp)
+{
+    float THELEADTERM = 1000.00f;
+    printf("                          NAAM RKHO!!                         \n");
+    printf("====================== INCOME STATEMENT ======================\n");
+    printf("            For the year ended: December 31, 2021\n");
+    // time_t t;
+    // time(&t);
+    printf("%sREVENUES: \n%s", COLOR_BOLD, COLOR_OFF);
+    printf("\t\tInventory Sales:\t\t\t$%.2f\n", 2 * THELEADTERM + THELEADTERM * 88.0f / 100.0f);
+    printf("\t\tCost Of Goods Sold:\t\t\t$%.2f\n", THELEADTERM * 140.f / 100.f);
+    printf("%sEXPENSES: \n%s", COLOR_BOLD, COLOR_OFF);
+    printf("\t\tAdevertising/Marketing Expense:\t\t$%.2f\n", THELEADTERM * 52 / 100.f);
+    printf("\t\tSalary Expense: \t\t\t$%.2f\n", noOfEmp * THELEADTERM / 2);
+    printf("\t\tRent Expense: \t\t\t\t$%.2f\n", THELEADTERM);
+    printf("\t\tIncome Tax: \t\t\t\t$%.2f\n", THELEADTERM * 45 / 100);
+    float total = (2 * THELEADTERM + THELEADTERM * 88.0f / 100.0f) + (THELEADTERM * 140.f / 100.f) - THELEADTERM * 52 / 100.f - (noOfEmp * THELEADTERM / 2) - (THELEADTERM) - (THELEADTERM * 45 / 100);
+    printf("%sNET INCOME: \t\t\t\t$%.2f %s", COLOR_BOLD, total, COLOR_OFF);
+    return total;
+}
+
+int createBalanceSheet(emp)
+{
+    float profit_loss = incomeStatement(emp);
+    printf("\n\n");
+    printf("                          NAAM RKHO!!                         \n");
+    printf("%s====================== BALANCE SHEET ======================\n%s", COLOR_BOLD, COLOR_OFF);
+    printf("            For the year ended: December 31, 2021\n");
+    printf("Assets")
+}
+
 int Accounts(void)
 {
     system("cls");
@@ -871,7 +910,7 @@ int adminMenu()
         {
             system("cls");
             printf("\t\t\t\t\t    ADMIN PROTAL\n\t\t\t\tSelect the respective option\n");
-            printf("\t\t\t\tAdd A Product\t\t\t1\n\t\t\t\tDelete A Product\t\t2\n\t\t\t\tAdd An Employee\t\t\t3\n\t\t\t\tRemove An Employee\t\t4\n\t\t\t\tReport Generation\t\t5\n\t\t\t\tLOG OUT\t\t\t\t6\n");
+            printf("\t\t\t\tAdd A Product\t\t\t1\n\t\t\t\tDelete A Product\t\t2\n\t\t\t\tAdd An Employee\t\t\t3\n\t\t\t\tRemove An Employee\t\t4\n\t\t\t\tReport Generation\t\t5\n\t\t\t\tBalanceSheet\t\t\t6\n\t\t\t\tLOG OUT\t\t\t\t7\n");
             printf("\t\t\t\tInput: ");
             fflush(stdin);
             scanf(" %d", &choice);
@@ -900,10 +939,16 @@ int adminMenu()
         }
         case 5:
         {
+            // LoadingScreen();
             reportGenerationLoadingScreen();
             break;
         }
         case 6:
+        {
+            createBalanceSheet();
+            break;
+        }
+        case 7:
         {
             printf("\t\t\t\t      LOGING OUT ... `\\(^ o ^)/`\n");
             sleep(1);
