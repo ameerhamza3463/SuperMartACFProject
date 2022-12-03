@@ -9,6 +9,17 @@
 // STRUCTURES
 #define COLOR_BOLD "\x1B[1m"
 #define COLOR_OFF "\x1B[0m"
+#define AC_BLACK "\x1b[30m"
+#define AC_RED "\x1b[31m"
+#define AC_GREEN "\x1b[32m"
+#define AC_YELLOW "\x1b[33m"
+#define AC_BLUE "\x1b[34m"
+#define AC_MAGENTA "\x1b[35m"
+#define AC_CYAN "\x1b[36m"
+#define AC_WHITE "\x1b[37m"
+#define AC_NORMAL "\x1b[m"
+#define UNDERLINE "\033[4m"
+#define CLOSEUNDERLINE "\033[0m"
 
 struct items
 {
@@ -307,9 +318,10 @@ void reportGenerationLoadingScreen()
 float incomeStatement(int noOfEmp)
 {
     float THELEADTERM = 1000.00f;
-    printf("                          NAAM RKHO!!                         \n");
-    printf("====================== INCOME STATEMENT ======================\n");
-    printf("            For the year ended: December 31, 2021\n");
+    printf("                            NAAM RKHO!!                         \n");
+    printf("%s%s===================== INCOME STATEMENT ======================%s\n", COLOR_BOLD, AC_GREEN, COLOR_OFF);
+    printf("%s                 Year Ended: December 31, 2021\n", AC_BLUE);
+    printf("%s", AC_NORMAL);
     // time_t t;
     // time(&t);
     printf("%sREVENUES: \n%s", COLOR_BOLD, COLOR_OFF);
@@ -324,15 +336,58 @@ float incomeStatement(int noOfEmp)
     printf("%sNET INCOME: \t\t\t\t$%.2f %s", COLOR_BOLD, total, COLOR_OFF);
     return total;
 }
+float RetainedEarnings(int e)
+{
+    float total = incomeStatement(e);
+    printf("\n");
+    printf("%s%s=============== Statement of Retained Earnings ===============%s\n", COLOR_BOLD, AC_GREEN, COLOR_OFF);
+    printf("%s                 Year Ended: December 31, 2021\n", AC_BLUE);
+    printf("%s", AC_NORMAL);
+    printf("Retained Earnings, January 1 , 2018\t\t\t%.2f\n", 0.f);
+    printf("Net Income For The Year\t\t\t\t\t%.2f\n", total);
+    printf("Dividends\t\t\t\t\t\t%.2f\n", 0.f);
+    printf("\nRetained Earnings, December 31, 2021 \t\t\t%.2f\n", total);
+    return total;
+}
 
 int createBalanceSheet(emp)
 {
-    float profit_loss = incomeStatement(emp);
+    system("cls");
+    float profit_loss = RetainedEarnings(emp);
     printf("\n\n");
-    printf("                          NAAM RKHO!!                         \n");
-    printf("%s====================== BALANCE SHEET ======================\n%s", COLOR_BOLD, COLOR_OFF);
-    printf("            For the year ended: December 31, 2021\n");
-    printf("Assets")
+    printf("%s%s====================== BALANCE SHEET ======================\n%s", COLOR_BOLD, AC_GREEN, COLOR_OFF);
+    printf("%s                 Year Ended: December 31, 2021\n", AC_BLUE);
+    printf("%s", AC_NORMAL);
+    printf("%sAssets%s\n", COLOR_BOLD, COLOR_OFF);
+    float KEYTERM = 10000.f;
+    printf("Cash: \t\t\t\t\t$%.2f\n", KEYTERM * 2.4);
+    printf("Account Recievable: \t\t\t$%.2f\n", KEYTERM * 0.85);
+    printf("Inventory: \t\t\t\t$%.2f\n", KEYTERM * 1.5);
+    printf("Prepaid Expenses: \t\t\t$%.2f\n", KEYTERM * 1);
+    printf("------------------------------------\n");
+    printf("%s%sTotal Assets%s%s", COLOR_BOLD, UNDERLINE, CLOSEUNDERLINE, COLOR_OFF);
+    float assets = KEYTERM * 2.4 + KEYTERM * 0.85 + KEYTERM * 1.5 + KEYTERM * 1;
+    printf("\t\t\t\t%.2f\n\n", assets);
+    printf("%sLiabilities%s\n", COLOR_BOLD, COLOR_OFF);
+    printf("Accounts Payable: \t\t\t$%.2f\n", KEYTERM * 0.25);
+    printf("Income Tax Payable: \t\t\t$%.2f\n", KEYTERM * 0.05);
+    printf("Others Liabilities: \t\t\t$%.2f\n", KEYTERM * 1.45);
+    printf("------------------------------------\n");
+    printf("%s%sTotal Liabilities%s%s", COLOR_BOLD, UNDERLINE, CLOSEUNDERLINE, COLOR_OFF);
+    float Liabilities = KEYTERM * 0.25 + KEYTERM * 0.05 + KEYTERM * 1.45;
+    printf("\t\t\t%.2f\n\n", Liabilities);
+    float equity = assets - Liabilities;
+    printf("%sShareholder Equity%s\n", COLOR_BOLD, COLOR_OFF);
+    printf("Common Stock:\t\t\t\t$%.2f\n", equity - profit_loss);
+    printf("Retained Earnings:\t\t\t$%.2f\n", profit_loss);
+    printf("------------------------------------\n");
+    printf("%s%sTotal Shareholder's Equity%s%s", COLOR_BOLD, UNDERLINE, CLOSEUNDERLINE, COLOR_OFF);
+    printf("\t\t%.2f\n\n", equity);
+    
+
+    
+    
+    getch();
 }
 
 int Accounts(void)
