@@ -343,7 +343,7 @@ float RetainedEarnings(int e)
     printf("%s%s=============== Statement of Retained Earnings ===============%s\n", COLOR_BOLD, AC_GREEN, COLOR_OFF);
     printf("%s                 Year Ended: December 31, 2021\n", AC_BLUE);
     printf("%s", AC_NORMAL);
-    printf("Retained Earnings, January 1 , 2018\t\t\t%.2f\n", 0.f);
+    printf("Retained Earnings, January 1 , 2021\t\t\t%.2f\n", 0.f);
     printf("Net Income For The Year\t\t\t\t\t%.2f\n", total);
     printf("Dividends\t\t\t\t\t\t%.2f\n", 0.f);
     printf("\nRetained Earnings, December 31, 2021 \t\t\t%.2f\n", total);
@@ -360,29 +360,29 @@ int createBalanceSheet(emp)
     printf("%s", AC_NORMAL);
     printf("%sAssets%s\n", COLOR_BOLD, COLOR_OFF);
     float KEYTERM = 10000.f;
-    printf("Cash: \t\t\t\t\t$%.2f\n", KEYTERM * 2.4);
-    printf("Account Recievable: \t\t\t$%.2f\n", KEYTERM * 0.85);
-    printf("Inventory: \t\t\t\t$%.2f\n", KEYTERM * 1.5);
-    printf("Prepaid Expenses: \t\t\t$%.2f\n", KEYTERM * 1);
+    printf("Cash: \t\t\t\t\t\t\t$%.2f\n", KEYTERM * 2.4);
+    printf("Account Recievable: \t\t\t\t\t$%.2f\n", KEYTERM * 0.85);
+    printf("Inventory: \t\t\t\t\t\t$%.2f\n", KEYTERM * 1.5);
+    printf("Prepaid Expenses: \t\t\t\t\t$%.2f\n", KEYTERM * 1);
     printf("------------------------------------\n");
     printf("%s%sTotal Assets%s%s", COLOR_BOLD, UNDERLINE, CLOSEUNDERLINE, COLOR_OFF);
     float assets = KEYTERM * 2.4 + KEYTERM * 0.85 + KEYTERM * 1.5 + KEYTERM * 1;
-    printf("\t\t\t\t%.2f\n\n", assets);
+    printf("\t\t\t\t\t\t$%.2f\n\n", assets);
     printf("%sLiabilities%s\n", COLOR_BOLD, COLOR_OFF);
-    printf("Accounts Payable: \t\t\t$%.2f\n", KEYTERM * 0.25);
-    printf("Income Tax Payable: \t\t\t$%.2f\n", KEYTERM * 0.05);
-    printf("Others Liabilities: \t\t\t$%.2f\n", KEYTERM * 1.45);
+    printf("Accounts Payable: \t\t\t\t\t$%.2f\n", KEYTERM * 0.25);
+    printf("Income Tax Payable: \t\t\t\t\t$%.2f\n", KEYTERM * 0.05);
+    printf("Others Liabilities: \t\t\t\t\t$%.2f\n", KEYTERM * 1.45);
     printf("------------------------------------\n");
     printf("%s%sTotal Liabilities%s%s", COLOR_BOLD, UNDERLINE, CLOSEUNDERLINE, COLOR_OFF);
     float Liabilities = KEYTERM * 0.25 + KEYTERM * 0.05 + KEYTERM * 1.45;
-    printf("\t\t\t%.2f\n\n", Liabilities);
+    printf("\t\t\t\t\t$%.2f\n\n", Liabilities);
     float equity = assets - Liabilities;
     printf("%sShareholder Equity%s\n", COLOR_BOLD, COLOR_OFF);
-    printf("Common Stock:\t\t\t\t$%.2f\n", equity - profit_loss);
-    printf("Retained Earnings:\t\t\t$%.2f\n", profit_loss);
+    printf("Common Stock:\t\t\t\t\t\t$%.2f\n", equity - profit_loss);
+    printf("Retained Earnings:\t\t\t\t\t$%.2f\n", profit_loss);
     printf("------------------------------------\n");
     printf("%s%sTotal Shareholder's Equity%s%s", COLOR_BOLD, UNDERLINE, CLOSEUNDERLINE, COLOR_OFF);
-    printf("\t\t%.2f\n\n", equity);
+    printf("\t\t\t\t$%.2f\n\n", equity);
     
 
     
@@ -1000,7 +1000,7 @@ int adminMenu()
         }
         case 6:
         {
-            createBalanceSheet();
+            createBalanceSheet(4);
             break;
         }
         case 7:
