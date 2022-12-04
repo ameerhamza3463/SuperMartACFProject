@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include<time.h>
+#include <time.h>
 // using namespace std;
 // STRUCTURES
 #define COLOR_BOLD "\x1B[1m"
@@ -315,33 +315,36 @@ void reportGenerationLoadingScreen()
     printf("Press any key to go forward...\n");
     getchar();
 }
-void cashbook(int x,int y)
+void cashbook(int x, int y)
 {
-	int amt=x;
-	int amt1=y;
-	time_t t;   // not a primitive datatype
+    int amt = x;
+    int amt1 = y;
+    time_t t; // not a primitive datatype
+
     time(&t);
-	printf("\t\t\t===================== CASH BOOK ======================\tDATE:%s",ctime(&t),UNDERLINE,AC_BLUE);
-	printf("\t\t\t\t\t    NOVEMBER 2022\n");
-	printf("\t\tDEBIT(RECIEPTS)\t\t\t\t\t\tCREDIT(PAYMENTS)\n");
-	printf("  DATE\t\tDESCRIPTION\tQuantity\tAMOUNT\t|\tDATE\tDESCRIPTION\t\t\tAMOUNT\n");
-	printf("2/11/2022\tApple\t\t  20\t\t%d/-\t|    5/11/2022\tNote Payable-Sattar sheikh\t%d/-\n",amt*20,amt1*120);
-	printf("6/11/2022\tRice\t\t  5\t\t%d/-\t|    5/11/2022\tSalary expense\t\t\t%d/-\n",amt*5,amt1*145);
-	printf("9/11/2022\tOil\t\t  30\t\t%d/-\t|    5/11/2022\tK-Electric Bill\t\t\t%d/-\n",amt*30,amt1*111);
-	printf("11/11/2022\tApple\t\t  25\t\t%d/-\t|    5/11/2022\tDrawings\t\t\t%d/-\n",amt*25,amt1*50);
-	printf("14/11/2022\tFish\t\t  40\t\t%d/-\t|    5/11/2022\tChai paani\t\t\t%d/-\n",amt*40,amt1*130);
-	printf("15/11/2022\tBanana\t\t  10\t\t%d/-\t|    5/11/2022\tNote Payable-Haseeb Dharwarwala\t%d/-\n",amt*10,amt1*175);
-	printf("16/11/2022\tRice\t\t  14\t\t%d/-\t|    5/11/2022\tLED light bulbs\t\t\t%d/-\n",amt*14,amt1*25);
-	printf("15/11/2022\tApple\t\t  7\t\t%d/-\t|    5/11/2022\tpedestrial fans\t\t\t%d/-\n",amt*7,amt1*15);
-	int t1=(amt*20)+(amt*5)+(amt*30)+(amt*25)+(amt*40)+(amt*10)+(amt*14)+(amt*7);
-	int t2=(amt1*120)+(amt1*145)+(amt1*111)+(amt1*50)+(amt1*130)+(amt1*175)+(amt1*25)+(amt1*15);
-	printf("\t\tTOTAL:\t\t\t\t%d/- |\t\tTOTAL:\t\t\t\t%d",t1,t2);
-    sleep(10);
+    printf("\t\t\t=====================%s CASH BOOK %s======================\n\t\t\t\t   %sDATE:%s",AC_CYAN , AC_NORMAL,AC_GREEN, ctime(&t));
+    // printf("\t\t\t\t\t    NOVEMBER 2022\n");
+    printf("%s", AC_NORMAL);
+    printf("\t\tDEBIT(RECIEPTS)\t\t\t\t\t\tCREDIT(PAYMENTS)\n");
+    printf("  DATE\t\tDESCRIPTION\tQuantity\tAMOUNT\t|\tDATE\tDESCRIPTION\t\t\tAMOUNT\n");
+    printf("2/11/2022\tApple\t\t  20\t\t%d/-\t|    5/11/2022\tNote Payable-Sattar sheikh\t%d/-\n", amt * 20, amt1 * 120);
+    printf("6/11/2022\tRice\t\t  5\t\t%d/-\t|    5/11/2022\tSalary expense\t\t\t%d/-\n", amt * 5, amt1 * 145);
+    printf("9/11/2022\tOil\t\t  30\t\t%d/-\t|    5/11/2022\tK-Electric Bill\t\t\t%d/-\n", amt * 30, amt1 * 111);
+    printf("11/11/2022\tApple\t\t  25\t\t%d/-\t|    5/11/2022\tDrawings\t\t\t%d/-\n", amt * 25, amt1 * 50);
+    printf("14/11/2022\tFish\t\t  40\t\t%d/-\t|    5/11/2022\tChai paani\t\t\t%d/-\n", amt * 40, amt1 * 130);
+    printf("15/11/2022\tBanana\t\t  10\t\t%d/-\t|    5/11/2022\tNote Payable-Haseeb Dharwarwala\t%d/-\n", amt * 10, amt1 * 175);
+    printf("16/11/2022\tRice\t\t  14\t\t%d/-\t|    5/11/2022\tLED light bulbs\t\t\t%d/-\n", amt * 14, amt1 * 25);
+    printf("15/11/2022\tApple\t\t  7\t\t%d/-\t|    5/11/2022\tpedestrial fans\t\t\t%d/-\n", amt * 7, amt1 * 15);
+    int t1 = (amt * 20) + (amt * 5) + (amt * 30) + (amt * 25) + (amt * 40) + (amt * 10) + (amt * 14) + (amt * 7);
+    int t2 = (amt1 * 120) + (amt1 * 145) + (amt1 * 111) + (amt1 * 50) + (amt1 * 130) + (amt1 * 175) + (amt1 * 25) + (amt1 * 15);
+    printf("\t\tTOTAL:\t\t\t\t%d/- |\t\tTOTAL:\t\t\t\t%d", t1, t2);
+    printf("\nPress Any Key To Continue\n");
+    getch();
 }
 float incomeStatement(int noOfEmp)
 {
     float THELEADTERM = 1000.00f;
-    printf("                            NAAM RKHO!!                         \n");
+    printf("%s%s                            TINY TYCOON                          %s\n", COLOR_BOLD, AC_CYAN, COLOR_OFF);
     printf("%s%s===================== INCOME STATEMENT ======================%s\n", COLOR_BOLD, AC_GREEN, COLOR_OFF);
     printf("%s                 Year Ended: December 31, 2021\n", AC_BLUE);
     printf("%s", AC_NORMAL);
@@ -406,10 +409,7 @@ int createBalanceSheet(emp)
     printf("------------------------------------\n");
     printf("%s%sTotal Shareholder's Equity%s%s", COLOR_BOLD, UNDERLINE, CLOSEUNDERLINE, COLOR_OFF);
     printf("\t\t\t\t$%.2f\n\n", equity);
-    
 
-    
-    
     getch();
 }
 
@@ -992,7 +992,7 @@ int adminMenu()
             printf("\t\t\t\tInput: ");
             fflush(stdin);
             scanf(" %d", &choice);
-        } while (choice < 1 || choice > 6);
+        } while (choice < 1 || choice > 7);
         switch (choice)
         {
         case 1:
@@ -1022,11 +1022,11 @@ int adminMenu()
             break;
         }
         case 6:
-                {
-                    cashbook(125,95);
-                    sleep(1);
-                    break;
-                }
+        {
+            cashbook(125, 95);
+            // sleep(1);
+            break;
+        }
         case 7:
         {
             createBalanceSheet(4);
