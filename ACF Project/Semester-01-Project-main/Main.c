@@ -395,7 +395,7 @@ int createBalanceSheet(emp)
     float assets = KEYTERM * 2.4 + KEYTERM * 0.85 + KEYTERM * 1.5 + KEYTERM * 1;
     printf("\t\t\t\t\t\t$%.2f\n\n", assets);
     printf("%sLiabilities%s\n", COLOR_BOLD, COLOR_OFF);
-    printf("Accounts Payable: \t\t\t\t\t$%.2f\n", KEYTERM * 0.25);
+    printf("Notes Payable: \t\t\t\t\t$%.2f\n", KEYTERM * 0.25);
     printf("Income Tax Payable: \t\t\t\t\t$%.2f\n", KEYTERM * 0.05);
     printf("Others Liabilities: \t\t\t\t\t$%.2f\n", KEYTERM * 1.45);
     printf("------------------------------------\n");
